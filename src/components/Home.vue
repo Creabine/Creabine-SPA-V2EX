@@ -1,10 +1,12 @@
 <template>
 	<div>
-		<Navbar></Navbar>
+		<navbar></navbar>
 	  	<div class="panel panel-default">
 		  <div class="panel-body">
 		    这里放循环的内容
 		  </div>
+		</div>
+		<div class="panel panel-default">
 		  <div class="panel-body">
 		    这里放循环的内容
 		  </div>
@@ -15,6 +17,6 @@
 <script>
 	import Navbar from './Navbar.vue'
 	export default {
-		comments: { 'Navbar': Navbar }
+		components: { 'navbar': Navbar }
 	}
 </script>

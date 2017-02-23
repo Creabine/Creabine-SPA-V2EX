@@ -1,11 +1,27 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+  <div id="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <router-link to="/home"  class="navbar-brand">
+          <img class="v2ex-logo" src="./assets/v2ex.png" alt="">
+        </router-link>
+        <ul class="nav navbar-nav">
+          <li><router-link to="/home">一级菜单</router-link></li>
+          <li><router-link to="/home">关于我</router-link></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="container">
+      <router-view></router-view>
+    </div>
+    
   </div>
 </template>
 
 <script>
+
+
 export default {
   name: 'app'
 }
@@ -19,5 +35,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.v2ex-logo{
+  width: 70px;
 }
 </style>

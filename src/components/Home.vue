@@ -1,23 +1,29 @@
 <template>
 	<div>
 		<navbar></navbar>
-	  	<div class="panel panel-default">
+		<button type="button" class="btn btn-default btn-lg" @click="getHottestList()">
+		  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> get hottest
+		</button>
+
+		<button type="button" class="btn btn-default btn-lg" @click="getLatestList()">
+		  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> get latest
+		</button>
+	  	<div class="panel panel-default margin" v-for="item in itemList">
 			<ul class="list-group">
 			  <li class="list-group-item">
-			      <span class="badge mid">14</span>
+			      <span class="badge mid" v-text="item.replies"></span>
 				  <div class="media-left">
 				    <router-link to="/home">
-			          <img class="media-object" src="//v2ex.assets.uxengine.net/gravatar/89527949f22cfc1daea7f5016940a708?s=48&d=retro" alt="">
+			          <img class="media-object" :src="item.member.avatar_normal" alt="">
 			        </router-link>
 				  </div>
 				  <div class="media-body">
-				    <h4 class="media-heading">github真的访问不了吗？</h4>
-				    <span class="label label-default">分享发现</span>
-				    <span>作者：kalasoo</span>
-				    <span>发帖时间：2分钟前</span>
-				    <span>最后回复来自sollee</span>
+				    <h4 class="media-heading" v-text="item.title"></h4>
+				    <span class="label label-default" v-text="item.node.title"></span>
+				    <span  v-text="item.member.username"></span>
+				    <span v-text="item.created"></span>
+				    <span v-text="item.last_modified"></span>
 				  </div>
-			
 			  </li>
 			</ul>
 		</div>
@@ -26,11 +32,37 @@
 
 <script>
 	import Navbar from './Navbar.vue'
+	//假数据
+	import hottest from '../../static/hottest.json'
+	import latest from '../../static/latest.json'
+
 	export default {
-		components: { 'navbar': Navbar }
+		components: { 'navbar': Navbar },
+		computed : {
+			itemList () {
+	          // 从store中取出数据
+	          return this.$store.state.itemList
+	        }
+	    },
+		methods : {
+		  getHottestList() {
+		  	console.log(hottest);
+		  	this.$store.dispatch('getHottestList',hottest);
+		  },
+		  getLatestList() {
+		  	console.log(latest);
+		  	this.$store.dispatch('getLatestList',latest);
+		  }
+		},
 	}
+
+
+	
+
+
 </script>
 
 <style>
 .mid{margin-top: 15px;}
+.margin{margin-bottom: 0px !important;}
 </style>

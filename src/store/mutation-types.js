@@ -1,1 +1,2 @@
-	
+export const GET_HOTTEST_LIST = 'GET_HOTTEST_LIST'
+export const GET_LATEST_LIST = 'GET_LATEST_LIST'

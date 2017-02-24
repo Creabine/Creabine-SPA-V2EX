@@ -7,11 +7,10 @@
         </router-link>
         <ul class="nav navbar-nav">
           <li><router-link to="/home">一级菜单</router-link></li>
-          <li><router-link to="/aboutMe">关于我</router-link></li>
+          <li><router-link to="/about-me">关于我</router-link></li>
         </ul>
       </div>
     </nav>
-    
     <div class="container">
       <router-view></router-view>
     </div>

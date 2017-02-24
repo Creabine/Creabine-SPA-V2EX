@@ -3,9 +3,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+import store from './store'
 
 import App from './App'
 import Home from './components/Home'
+import AboutMe from './components/AboutMe'
 import 'bootstrap/dist/css/bootstrap.css'
 
 
@@ -13,11 +15,14 @@ Vue.use(VueRouter)
 Vue.use(VueResource)
 
 const routes = [{
-  path : '/',
-  component : Home
+    path : '/',
+    component : Home
 },{
-  path : '/home',
-  component : Home
+    path : '/home',
+    component : Home
+},{
+	path : '/about-me',
+	component : AboutMe
 }];
 
 const router = new VueRouter({
@@ -29,6 +34,7 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

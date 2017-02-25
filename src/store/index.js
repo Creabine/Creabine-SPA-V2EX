@@ -3,12 +3,13 @@ import Vuex from 'vuex'
 import mutations from './mutations'
 import actions from './actions'
 
+//假数据
+import user from '../../static/user.json'
 
 Vue.use(Vuex);
 
 const state = {
-	NavList: [],
-	Nav2List: [],
+	user,
 	itemList: []
 }
 

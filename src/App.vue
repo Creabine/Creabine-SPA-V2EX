@@ -6,8 +6,9 @@
           <img class="v2ex-logo" src="./assets/v2ex.png" alt="">
         </router-link>
         <ul class="nav navbar-nav">
-          <li><router-link to="/home">一级菜单</router-link></li>
-          <li><router-link to="/about-me">关于我</router-link></li>
+          <li><router-link to="/home">用户界面</router-link></li>
+          <li><router-link to="/list">查看帖子</router-link></li>
+          <li><router-link to="/User">关于我</router-link></li>
         </ul>
       </div>
     </nav>

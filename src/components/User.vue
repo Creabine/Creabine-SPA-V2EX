@@ -4,7 +4,7 @@
 			<ul class="list-group">
 			  <li class="list-group-item">
 				  <div class="media-left">
-				    <router-link to="/home">
+				    <router-link to="/user">
 			          <img class="media-object" :src="user.avatar_normal" :alt="user.username">
 			        </router-link>
 				  </div>

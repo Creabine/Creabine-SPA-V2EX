@@ -7,7 +7,8 @@ import store from './store'
 
 import App from './App'
 import Home from './components/Home'
-import AboutMe from './components/AboutMe'
+import List from './components/List'
+import User from './components/User'
 import 'bootstrap/dist/css/bootstrap.css'
 
 
@@ -21,8 +22,11 @@ const routes = [{
     path : '/home',
     component : Home
 },{
-	path : '/about-me',
-	component : AboutMe
+    path : '/list',
+    component : List
+},{
+	path : '/User',
+	component : User
 }];
 
 const router = new VueRouter({

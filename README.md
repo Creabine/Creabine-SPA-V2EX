@@ -1,6 +1,5 @@
-# creabine-v2ex
-
-> A Vue.js SPA demo for v2ex
+# Creabine-V2EX
+A Vue.js SPA demo for v2ex
 
 ## Build Setup
 
